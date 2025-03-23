@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Review Redirect</title>
+</head>
+<body>
+  <script>
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        if (data.country_code === 'CA') {
+          window.location.href = 'https://www.amazon.ca/review/create-review?asin=B0F14XQRDM';
+        } else {
+          window.location.href = 'https://www.amazon.com/review/create-review?asin=B0F14XQRDM';
+        }
+      })
+      .catch(() => {
+        window.location.href = 'https://www.amazon.com/review/create-review?asin=B0F14XQRDM';
+      });
+  </script>
+</body>
+</html>
